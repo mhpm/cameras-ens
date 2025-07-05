@@ -1,0 +1,60 @@
+<!-- Reusable Tally Screen Component with DaisyUI -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>OBS Tally</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="Tally1.js"></script>
+  </head>
+  <body class="bg-base-200 min-h-screen flex items-center justify-center">
+    <section class="card w-full max-w-md shadow-xl bg-base-100">
+      <div class="card-body space-y-4">
+        <!-- Settings Box -->
+        <div id="settingsbox" class="flex flex-col gap-2">
+          <input
+            type="text"
+            id="serverIP"
+            class="input input-bordered input-primary w-full"
+            placeholder="OBS Server IP:Port"
+          />
+          <button
+            type="button"
+            onclick="connectToServer();"
+            class="btn btn-primary"
+          >
+            Conectar a OBS
+          </button>
+        </div>
+        <!-- Selection Box -->
+        <div id="selectionbox" class="overflow-auto max-h-60 space-y-2"></div>
+        <!-- Selected Title Box -->
+        <div id="selectedTitleBox" class="hidden text-center">
+          <span
+            id="selectedTitleText"
+            class="font-bold text-lg text-base-content px-2 py-1 rounded"
+          ></span>
+        </div>
+        <!-- Live Status Box -->
+        <div id="wearelivebox" class="hidden text-center">
+          <span id="wearelivetext" class="font-bold text-2xl"></span>
+        </div>
+        <!-- Camera Status Color Indicator -->
+        <div
+          id="NewColorStatus"
+          class="w-full h-8 rounded transition-colors"
+        ></div>
+      </div>
+    </section>
+    <script>
+      // Move all your JS logic from OBSliveTally1.html here, or keep it in Tally1.js for reuse.
+      // Make sure to update element selectors if you change IDs/classes.
+    </script>
+  </body>
+</html>

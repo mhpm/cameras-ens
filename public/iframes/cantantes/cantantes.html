@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="JC Saints" />
+    <title>Control de Cámara Cantantes</title>
+
+    <meta
+      name="viewport"
+      content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width,user-scalable=no"
+    />
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="../Websocket/OBSliveTally-master/Tally_cantantes.js"></script>
+  </head>
+
+  <body>
+    <div class="">
+      <header class="primary">
+        <h1 class="title">
+          <strong>CÁMARA CANTANTES</strong>
+        </h1>
+      </header>
+      <nav class="primary">
+        <ul>
+          <li>
+            <a
+              class=""
+              href="#"
+              data-toggle="modal"
+              data-target="#set_presets"
+              style="color: grey"
+              >A s i g n a r    P o s i c i ó n</a
+            >
+          </li>
+          <li>
+            <a
+              class=""
+              href="#"
+              data-toggle="modal"
+              data-target="#cam_adjust_control_settings"
+              style="color: grey"
+              >P r e f e r e n c i a s</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <form role="form" class="form-horizontal">
+        <fieldset class="presets">
+          <div class="row">
+            <a
+              class="call_preset preset_button preset-1"
+              data-preset="1"
+              href="#preset-1"
+              style="
+                background-position: center;
+                background-size: cover;
+                background-image: url(../Fotos/church/1.png);
+              "
+            ></a>
+            <a
+              class="call_preset preset_button preset-2"
+              data-preset="2"
+              href="#preset-2"
+              style="
+                background-position: center;
+                background-size: cover;
+                background-image: url(../Fotos/church/2.png);
+              "
+            >
+            </a>
+            <a
+              class="call_preset preset_button preset-3"
+              data-preset="3"
+              href="#preset-3"
+              style="
+                background-position: center;
+                background-size: cover;
+                background-image: url(../Fotos/church/3.png);
+              "
+            ></a>
+            <a
+              class="call_preset preset_button preset-4"
+              data-preset="4"
+              href="#preset-4"
+              style="
+                background-position: center;
+                background-size: cover;
+                background-image: url(../Fotos/church/4.png);
+              "
+            ></a>
+            <a
+              class="call_preset preset_button preset-5"
+              data-preset="5"
+              href="#preset-5"
+              style="
+                background-position: center;
+                background-size: cover;
+                background-image: url(../Fotos/church/5.png);
+              "
+            ></a>
+            <a
+              class="call_preset preset_button preset-6"
+              data-preset="6"
+              href="#preset-6"
+              style="
+                background-position: center;
+                background-size: cover;
+                background-image: url(../Fotos/church/6.png);
+              "
+            ></a>
+          </div>
+          <div class="row">
+            <a
+              class="call_preset preset_button preset-7"
+              data-preset="7"
+              href="#preset-7"
+              style="
+                background-position: center;
+                background-size: cover;
+                background-image: url(../Fotos/church/7.png);
+              "
+            ></a>
+            <a
+              class="call_preset preset_button preset-8"
+              data-preset="8"
+              href="#preset-8"
+              style="
+                background-position: center;
+                background-size: cover;
+                background-image: url(../Fotos/church/8.png);
+              "
+            ></a>
+            <a
+              class="call_preset preset_button preset-9"
+              data-preset="9"
+              href="#preset-9"
+              style="
+                background-position: center;
+                background-size: cover;
+                background-image: url(../Fotos/church/9.png);
+              "
+            ></a>
+            <a
+              class="call_preset preset_button preset-10"
+              data-preset="10"
+              href="#preset-10"
+              style="
+                background-position: center;
+                background-size: cover;
+                background-image: url(../Fotos/church/10.png);
+              "
+            ></a>
+            <a
+              class="call_preset preset_button preset-12"
+              data-preset="12"
+              href="#preset-12"
+              style="
+                background-position: center;
+                background-size: cover;
+                background-image: url(../Fotos/church/12.png);
+              "
+            ></a>
+            <a
+              class="call_preset preset_button preset-13"
+              data-preset="13"
+              href="#preset-13"
+              style="
+                background-position: center;
+                background-size: cover;
+                background-image: url(../Fotos/church/13.png);
+              "
+            ></a>
+          </div>
+          <div class="row">
+            <a
+              class="call_preset preset_button preset-14"
+              data-preset="14"
+              href="#preset-14"
+              style="
+                background-position: center;
+                background-size: cover;
+                background-image: url(../Fotos/church/14.png);
+              "
+            ></a>
+            <a
+              class="call_preset preset_button preset-15"
+              data-preset="15"
+              href="#preset-15"
+              style="
+                background-position: center;
+                background-size: cover;
+                background-image: url(../Fotos/church/2.png);
+              "
+            ></a>
+            <a
+              class="call_preset preset_button preset-16"
+              data-preset="16"
+              href="#preset-16"
+              style="
+                background-position: center;
+                background-size: cover;
+                background-image: url(../Fotos/church/2.png);
+              "
+            ></a>
+            <a
+              class="call_preset preset_button preset-17"
+              data-preset="17"
+              href="#preset-17"
+              style="
+                background-position: center;
+                background-size: cover;
+                background-image: url(../Fotos/church/2.png);
+              "
+            ></a>
+            <a
+              class="call_preset preset_button preset-18"
+              data-preset="18"
+              href="#preset-18"
+              style="
+                background-position: center;
+                background-size: cover;
+                background-image: url(../Fotos/church/2.png);
+              "
+            ></a>
+            <a
+              class="call_preset preset_button preset-19"
+              data-preset="19"
+              href="#preset-19"
+              style="
+                background-position: center;
+                background-size: cover;
+                background-image: url(../Fotos/church/2.png);
+              "
+            ></a>
+          </div>
+
+          <div class="row">
+            <a href="#" class="autopan"></a>
+          </div>
+
+          <div class="controls">
+            <div class="zoom_controls">
+              <div class="rocker">
+                <div class="row">
+                  <a
+                    class="toggle_button toggle-up toggle-zoom-in adjust_zoom"
+                    data-action="zoomin"
+                    href="#zoom"
+                  ></a>
+                </div>
+                <div class="row">
+                  <a
+                    class="toggle_button toggle-down toggle-zoom-out adjust_zoom"
+                    data-action="zoomout"
+                    href="#zoom"
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="focus_controls">
+              <div class="rocker">
+                <div class="row">
+                  <a
+                    class="toggle_button toggle-up toggle-focus-in adjust_focus"
+                    data-action="focusin"
+                    href="#focus"
+                  ></a>
+                </div>
+                <div class="row">
+                  <a
+                    class="toggle_button toggle-down toggle-focus-out adjust_focus"
+                    data-action="focusout"
+                    href="#focus"
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="pantilt_controls">
+              <div class="row">
+                <div class="pantilt_image pantilt-blank-top-left"></div>
+                <a
+                  id="pantilt-button-up"
+                  class="pantilt-up pantilt_image adjust_pantilt"
+                  href="#pantilt"
+                  data-action="up"
+                ></a>
+                <div class="pantilt_image pantilt-blank-top-right"></div>
+              </div>
+              <div class="row">
+                <a
+                  id="pantilt-button-left"
+                  class="pantilt-left pantilt_image adjust_pantilt"
+                  href="#pantilt"
+                  data-action="left"
+                ></a>
+                <a
+                  id="pantilt-button-home"
+                  class="pantilt-home pantilt_image adjust_pantilt"
+                  href="#pantilt"
+                  data-action="home"
+                ></a>
+                <a
+                  id="pantilt-button-right"
+                  class="pantilt-right pantilt_image adjust_pantilt"
+                  href="#pantilt"
+                  data-action="right"
+                ></a>
+              </div>
+              <div class="row">
+                <div class="pantilt_image pantilt-blank-bottom-left"></div>
+                <a
+                  id="pantilt-button-down"
+                  class="pantilt-down pantilt_image adjust_pantilt"
+                  href="#pantilt"
+                  data-action="down"
+                ></a>
+                <div class="pantilt_image pantilt-blank-bottom-right"></div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal"
+      id="set_presets"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="set_presets_label"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="set_presets_label">Asignar Posición</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-xs-12">
+                <ol>
+                  <li>Mueve la cámara a la Posición/Zoom deseada</li>
+                  <li>Click en el número que deseas asignar</li>
+                </ol>
+              </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+              <div class="col-xs-2">
+                <input
+                  class="btn btn-primary btn-block assign_preset"
+                  type="button"
+                  value="1"
+                />
+              </div>
+              <div class="col-xs-2">
+                <input
+                  class="btn btn-primary btn-block assign_preset"
+                  type="button"
+                  value="2"
+                />
+              </div>
+              <div class="col-xs-2">
+                <input
+                  class="btn btn-primary btn-block assign_preset"
+                  type="button"
+                  value="3"
+                />
+              </div>
+              <div class="col-xs-2">
+                <input
+                  class="btn btn-primary btn-block assign_preset"
+                  type="button"
+                  value="4"
+                />
+              </div>
+              <div class="col-xs-2">
+                <input
+                  class="btn btn-primary btn-block assign_preset"
+                  type="button"
+                  value="5"
+                />
+              </div>
+              <div class="col-xs-2">
+                <input
+                  class="btn btn-primary btn-block assign_preset"
+                  type="button"
+                  value="6"
+                />
+              </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+              <div class="col-xs-2">
+                <input
+                  class="btn btn-primary btn-block assign_preset"
+                  type="button"
+                  value="7"
+                />
+              </div>
+              <div class="col-xs-2">
+                <input
+                  class="btn btn-primary btn-block assign_preset"
+                  type="button"
+                  value="8"
+                />
+              </div>
+              <div class="col-xs-2">
+                <input
+                  class="btn btn-primary btn-block assign_preset"
+                  type="button"
+                  value="9"
+                />
+              </div>
+              <div class="col-xs-2">
+                <input
+                  class="btn btn-primary btn-block assign_preset"
+                  type="button"
+                  value="10"
+                />
+              </div>
+              <div class="col-xs-2">
+                <input
+                  class="btn btn-primary btn-block assign_preset"
+                  type="button"
+                  value="12"
+                />
+              </div>
+              <div class="col-xs-2">
+                <input
+                  class="btn btn-primary btn-block assign_preset"
+                  type="button"
+                  value="13"
+                />
+              </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+              <div class="col-xs-2">
+                <input
+                  class="btn btn-primary btn-block assign_preset"
+                  type="button"
+                  value="14"
+                />
+              </div>
+              <div class="col-xs-2">
+                <input
+                  class="btn btn-primary btn-block assign_preset"
+                  type="button"
+                  value="15"
+                />
+              </div>
+              <div class="col-xs-2">
+                <input
+                  class="btn btn-primary btn-block assign_preset"
+                  type="button"
+                  value="16"
+                />
+              </div>
+              <div class="col-xs-2">
+                <input
+                  class="btn btn-primary btn-block assign_preset"
+                  type="button"
+                  value="17"
+                />
+              </div>
+              <div class="col-xs-2">
+                <input
+                  class="btn btn-primary btn-block assign_preset"
+                  type="button"
+                  value="18"
+                />
+              </div>
+              <div class="col-xs-2">
+                <input
+                  class="btn btn-primary btn-block assign_preset"
+                  type="button"
+                  value="19"
+                />
+              </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+              <div class="col-xs-12">
+                <input
+                  class="btn btn-primary btn-block assign_preset"
+                  type="button"
+                  value="Auto Panorámica - Posición Inicial Izquierda"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">
+              Listo!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal"
+      id="cam_adjust_control_settings"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="cam_adjust_control_settings_label"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="cam_adjust_control_settings_label">
+              Preferencias
+            </h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="form-group">
+                  <button
+                    class="form-control btn btn-primary adjust_setting"
+                    id="flip"
+                    data-action="flip"
+                  >
+                    Flip
+                  </button>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <div class="form-group">
+                  <button
+                    class="form-control btn btn-primary adjust_setting"
+                    id="mirror"
+                    data-action="mirror"
+                  >
+                    Mirror
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="form-group">
+                  <button
+                    class="form-control btn btn-primary adjust_setting"
+                    id="invertcontrols"
+                    data-action="invertcontrols"
+                  >
+                    Invert Controls
+                  </button>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <div class="form-group">
+                  <button
+                    class="form-control btn btn-primary adjust_setting"
+                    id="infinitypt"
+                    data-action="infinitypt"
+                  >
+                    Infinity Pan/Tilt
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="form-group">
+                  <a
+                    class="form-control btn btn-primary adjust_setting"
+                    data-action="infinityzoom"
+                    href="#settings"
+                    >Zoom Infinito</a
+                  >
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <div class="form-group">
+                  <a
+                    class="form-control btn btn-primary adjust_setting"
+                    data-action="infinityfocus"
+                    href="#settings"
+                    >Enfoque Infinito</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                <label>Velocidad Panorámica ◄ ►</label>
+                <select class="form-control change_setting" id="panspeed">
+                  <option value="1">1 (Lento)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8" selected>8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20 (Rápido)</option>
+                </select>
+              </div>
+              <div class="col-xs-6">
+                <label>Velocidad Zoom</label>
+                <select class="form-control change_setting" id="zoomspeed">
+                  <option value="0">0 (Lento)</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5" selected>5</option>
+                  <option value="6">6</option>
+                  <option value="7">7 (Rápido)</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-6">
+                <label>Velocidad Inclinación  ▲ ▼</label>
+                <select class="form-control change_setting" id="tiltspeed">
+                  <option value="1">1 (Lento)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8" selected>8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15 (Rápido)</option>
+                </select>
+              </div>
+              <div class="col-xs-6">
+                <label>Velocidad Enfoque</label>
+                <select class="form-control change_setting" id="focusspeed">
+                  <option value="0">0 (Lento)</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3" selected>3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7 (Rápido)</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-6">
+                <label>Intervalo de panorámica automático</label>
+                <select
+                  class="form-control change_setting"
+                  id="autopaninterval"
+                >
+                  <option value="30">30 Segundos</option>
+                  <option value="45">45 Segundos</option>
+                  <option value="60" selected>1 Minuto</option>
+                  <option value="90">1:30 Minutos</option>
+                  <option value="120">2 Minutos</option>
+                </select>
+              </div>
+              <div class="col-xs-6"></div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                <label for="cam_ip2">Dirección IP</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="cam_ip2"
+                  value="192.168.0.100"
+                />
+              </div>
+              <!--<select class="form-control" id="selectCamIp"></select>-->
+              <!--<input class="form-control" type="hidden" id="cam_ip2" value=""></div>-->
+              <div class="col-xs-6">
+                <label>&nbsp;</label>
+                <button class="btn btn-default form-control reload_cam">
+                  Recargar Cámara
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">
+              Listo!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="preload-images">
+      <img
+        src="./images/preset-button-autopan-active.png"
+        width="1"
+        height="1"
+        alt=""
+      />
+      <img src="./images/pantilt-up-active.png" width="1" height="1" alt="" />
+      <img src="./images/pantilt-down-active.png" width="1" height="1" alt="" />
+      <img src="./images/pantilt-left-active.png" width="1" height="1" alt="" />
+      <img
+        src="./images/pantilt-right-active.png"
+        width="1"
+        height="1"
+        alt=""
+      />
+      <img src="./images/pantilt-home-active.png" width="1" height="1" alt="" />
+      <img src="./images/rocker-toggle-rest.png" width="1" height="1" alt="" />
+      <img src="./images/rocker-toggle-up.png" width="1" height="1" alt="" />
+      <img src="./images/rocker-toggle-down.png" width="1" height="1" alt="" />
+    </div>
+  </body>
+</html>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    console.log('Document Cantantes is ready');
+    if (typeof updateDisplay === 'function') {
+      updateDisplay();
+    }
+    // Listen for tally color changes from other frames
+    window.addEventListener('storage', function (event) {
+      if (event.key === 'tally_cantantes_color') {
+        // Use the new value
+        const newColor = event.newValue;
+        // Example: update background or notify user
+        document.body.style.backgroundColor = newColor;
+      }
+    });
+  });
+
+  var remote = require('remote');
+  var Menu = remote.require('menu');
+  var template = [
+    {
+      label: 'Camera Control',
+      submenu: [
+        {
+          label: 'About Camera Control',
+          selector: 'orderFrontStandardAboutPanel:',
+        },
+        {
+          type: 'separator',
+        },
+        {
+          label: 'Services',
+          submenu: [],
+        },
+        {
+          type: 'separator',
+        },
+        {
+          label: 'Hide Camera Control',
+          accelerator: 'Command+H',
+          selector: 'hide:',
+        },
+        {
+          label: 'Hide Others',
+          accelerator: 'Command+Shift+H',
+          selector: 'hideOtherApplications:',
+        },
+        {
+          label: 'Show All',
+          selector: 'unhideAllApplications:',
+        },
+        {
+          type: 'separator',
+        },
+        {
+          label: 'Quit',
+          accelerator: 'Command+Q',
+          selector: 'terminate:',
+        },
+      ],
+    },
+    {
+      label: 'Window',
+      submenu: [
+        {
+          label: 'Minimize',
+          accelerator: 'Command+M',
+          selector: 'performMiniaturize:',
+        },
+        {
+          label: 'Close',
+          accelerator: 'Command+W',
+          selector: 'performClose:',
+        },
+        {
+          type: 'separator',
+        },
+        {
+          label: 'Bring All to Front',
+          selector: 'arrangeInFront:',
+        },
+      ],
+    },
+    {
+      label: 'Help',
+      submenu: [],
+    },
+  ];
+
+  menu = Menu.buildFromTemplate(template);
+
+  Menu.setApplicationMenu(menu);
+
+  // only used for electron packaging
+  window.$ = window.jQuery = require('./js2/jquery-2.1.4.min2.js');
+</script>
+<script src="./js2/jquery-2.1.4.min2.js" type="text/javascript"></script>
+<script src="./js2/bootstrap.min.js" type="text/javascript"></script>
+<script src="./js2/mousetrap.min.js" type="text/javascript"></script>
+<script src="./js2/index2.js" type="text/javascript"></script>
+<!--<script src="./js2/cameras2.js" type="text/javascript"></script>-->
