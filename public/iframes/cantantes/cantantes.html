@@ -778,84 +778,84 @@
     });
   });
 
-  var remote = require('remote');
-  var Menu = remote.require('menu');
-  var template = [
-    {
-      label: 'Camera Control',
-      submenu: [
-        {
-          label: 'About Camera Control',
-          selector: 'orderFrontStandardAboutPanel:',
-        },
-        {
-          type: 'separator',
-        },
-        {
-          label: 'Services',
-          submenu: [],
-        },
-        {
-          type: 'separator',
-        },
-        {
-          label: 'Hide Camera Control',
-          accelerator: 'Command+H',
-          selector: 'hide:',
-        },
-        {
-          label: 'Hide Others',
-          accelerator: 'Command+Shift+H',
-          selector: 'hideOtherApplications:',
-        },
-        {
-          label: 'Show All',
-          selector: 'unhideAllApplications:',
-        },
-        {
-          type: 'separator',
-        },
-        {
-          label: 'Quit',
-          accelerator: 'Command+Q',
-          selector: 'terminate:',
-        },
-      ],
-    },
-    {
-      label: 'Window',
-      submenu: [
-        {
-          label: 'Minimize',
-          accelerator: 'Command+M',
-          selector: 'performMiniaturize:',
-        },
-        {
-          label: 'Close',
-          accelerator: 'Command+W',
-          selector: 'performClose:',
-        },
-        {
-          type: 'separator',
-        },
-        {
-          label: 'Bring All to Front',
-          selector: 'arrangeInFront:',
-        },
-      ],
-    },
-    {
-      label: 'Help',
-      submenu: [],
-    },
-  ];
+  // var remote = require('remote');
+  // var Menu = remote.require('menu');
+  // var template = [
+  //   {
+  //     label: 'Camera Control',
+  //     submenu: [
+  //       {
+  //         label: 'About Camera Control',
+  //         selector: 'orderFrontStandardAboutPanel:',
+  //       },
+  //       {
+  //         type: 'separator',
+  //       },
+  //       {
+  //         label: 'Services',
+  //         submenu: [],
+  //       },
+  //       {
+  //         type: 'separator',
+  //       },
+  //       {
+  //         label: 'Hide Camera Control',
+  //         accelerator: 'Command+H',
+  //         selector: 'hide:',
+  //       },
+  //       {
+  //         label: 'Hide Others',
+  //         accelerator: 'Command+Shift+H',
+  //         selector: 'hideOtherApplications:',
+  //       },
+  //       {
+  //         label: 'Show All',
+  //         selector: 'unhideAllApplications:',
+  //       },
+  //       {
+  //         type: 'separator',
+  //       },
+  //       {
+  //         label: 'Quit',
+  //         accelerator: 'Command+Q',
+  //         selector: 'terminate:',
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     label: 'Window',
+  //     submenu: [
+  //       {
+  //         label: 'Minimize',
+  //         accelerator: 'Command+M',
+  //         selector: 'performMiniaturize:',
+  //       },
+  //       {
+  //         label: 'Close',
+  //         accelerator: 'Command+W',
+  //         selector: 'performClose:',
+  //       },
+  //       {
+  //         type: 'separator',
+  //       },
+  //       {
+  //         label: 'Bring All to Front',
+  //         selector: 'arrangeInFront:',
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     label: 'Help',
+  //     submenu: [],
+  //   },
+  // ];
 
-  menu = Menu.buildFromTemplate(template);
+  // menu = Menu.buildFromTemplate(template);
 
-  Menu.setApplicationMenu(menu);
+  // Menu.setApplicationMenu(menu);
 
-  // only used for electron packaging
-  window.$ = window.jQuery = require('./js2/jquery-2.1.4.min2.js');
+  // // only used for electron packaging
+  // window.$ = window.jQuery = require('./js2/jquery-2.1.4.min2.js');
 </script>
 <script src="./js2/jquery-2.1.4.min2.js" type="text/javascript"></script>
 <script src="./js2/bootstrap.min.js" type="text/javascript"></script>

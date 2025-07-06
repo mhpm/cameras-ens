@@ -317,15 +317,15 @@ function updateDisplay() {
   localStorage.setItem('tally_atril_color', color);
 
   document.body.style.backgroundColor = color;
-  textBackground = color == '#222' ? '#222' : 'transparent';
-  document.getElementById('selectedTitleText').style.backgroundColor =
-    textBackground;
-  // *************  AQUI AGREGUE EL STATUS DE LA CAMARA EN OBS ***************
-  document.getElementById('NewColorStatus').style.backgroundColor = color;
+  // textBackground = color == '#222' ? '#222' : 'transparent';
+  // // document.getElementById('selectedTitleText').style.backgroundColor =
+  // //   textBackground;
+  // // *************  AQUI AGREGUE EL STATUS DE LA CAMARA EN OBS ***************
+  // document.getElementById('NewColorStatus').style.backgroundColor = color;
   // *************  AQUI AGREGUE EL STATUS DE LA CAMARA EN OBS ***************
 
-  streamDescription = currentState.streaming ? 'LIVE' : 'OFFLINE';
-  document.getElementById('wearelivetext').innerHTML = streamDescription;
+  // streamDescription = currentState.streaming ? 'LIVE' : 'OFFLINE';
+  // document.getElementById('wearelivetext').innerHTML = streamDescription;
 }
 
 // En realidad no necesito esto, solo la modificación del color del background en el panel de control de camaras
