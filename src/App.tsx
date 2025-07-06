@@ -1,52 +1,84 @@
+import React, { useRef } from 'react';
 import './App.css';
+import { CameraControl } from './components';
+
+type CameraIframeProps = {
+  src: string;
+  title: string;
+};
+
+const CameraIframe: React.FC<CameraIframeProps> = ({ src, title }) => {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  const handleFullscreen = () => {
+    const iframe = iframeRef.current;
+    if (iframe) {
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if ((iframe as any).webkitRequestFullscreen) {
+        (iframe as any).webkitRequestFullscreen();
+      } else if ((iframe as any).msRequestFullscreen) {
+        (iframe as any).msRequestFullscreen();
+      }
+    }
+  };
+
+  return (
+    <div className="w-full lg:w-[49%] relative">
+      <iframe
+        ref={iframeRef}
+        src={src}
+        className="rounded-2xl shadow-xl"
+        title={title}
+        width="100%"
+        height="700"
+        allow="fullscreen"
+      ></iframe>
+      <button
+        onClick={handleFullscreen}
+        className="btn btn-sm absolute top-3 right-3 bg-white bg-opacity-80 rounded px-3 py-1 shadow hover:bg-opacity-100 text-xl font-black"
+        style={{ zIndex: 10 }}
+        title="Pantalla completa"
+      >
+        ⛶
+      </button>
+    </div>
+  );
+};
 
 function App() {
   return (
-    <>
-      <div className="bg-gray-100 min-h-screen flex flex-col">
-        <header className="bg-neutral-800 shadow-m p-4">
-          <div className="navbar bg-base text-center">
-            <div className="flex-none"></div>
-            <div className="flex-1">
-              <a className="text-white text-3xl font-bold">
-                1ra IAFCJ Ensenada
-              </a>
-              <p className="text-white text-lg">Control de Camaras</p>
-            </div>
+    <div className="bg-gray-100 min-h-screen flex flex-col">
+      <header className="bg-neutral-800 shadow-m p-4">
+        <div className="navbar bg-base text-center">
+          <div className="flex-none"></div>
+          <div className="flex-1">
+            <a className="text-white text-3xl font-bold">1ra IAFCJ Ensenada</a>
+            <p className="text-white text-lg">Control de Camaras</p>
           </div>
-        </header>
+        </div>
+      </header>
 
-        <main className="flex-1 flex flex-col items-center justify-center py-8">
-          <section className="flex justify-center flex-wrap items-start gap-2 w-full max-w-[95vw]">
-            <div className="w-full lg:w-[49%]">
-              <iframe
-                src="iframes/atril/atril.html"
-                className="rounded-2xl shadow-xl"
-                title="OBS JCS 1"
-                width="100%"
-                height="700"
-              ></iframe>
-            </div>
+      <main className="flex-1 flex flex-col items-center justify-center py-8">
+        <section className="flex justify-center flex-wrap items-start gap-2 w-full max-w-[95vw]">
+          <CameraIframe src="iframes/atril/atril.html" title="OBS JCS 1" />
+          {/* <div className="w-full lg:w-[49%]">
+            <CameraControl />
+          </div> */}
+          <CameraIframe
+            src="iframes/cantantes/cantantes.html"
+            title="OBS JCS 2"
+          />
+        </section>
+      </main>
 
-            <div className="w-full lg:w-[49%]">
-              <iframe
-                src="iframes/cantantes/cantantes.html"
-                className="rounded-2xl shadow-xl"
-                title="OBS JCS 2"
-                width="100%"
-                height="700"
-              ></iframe>
-            </div>
-          </section>
-        </main>
+      <footer className="bg-neutral-800 shadow-m p-4 text-center">
+        <p className="text-white text-sm">
+          © 2025 1ra IAFCJ Ensenada. Todos los derechos reservados.
+        </p>
+      </footer>
 
-        <footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
-          <aside>
-            <p>Copyright © 2025 - All right reserved by 1ra IAFCJ Ensenada</p>
-          </aside>
-        </footer>
-
-        <section className="card w-full max-w-md shadow-xl bg-base-100 hidden">
+      {/* <section className="card w-full max-w-md shadow-xl bg-base-100 hidden">
           <div className="card-body space-y-4">
             <div id="settingsbox" className="flex flex-col gap-2">
               <input
@@ -81,9 +113,8 @@ function App() {
               className="w-full h-8 rounded transition-colors"
             ></div>
           </div>
-        </section>
-      </div>
-    </>
+        </section> */}
+    </div>
   );
 }
 
